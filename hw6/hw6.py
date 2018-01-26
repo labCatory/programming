@@ -36,7 +36,7 @@ def verb_quest(subj,obj):
     return phr
 
 def verb_if(subj,obj):
-    with open('v.txt', encoding='utf-8') as t:        
+    with open('v.txt',encoding='utf-8') as t:        
         verb_if=t.readlines
         phr=subj+' '+random.choice(verb_if())+' '+'бы'+' '+obj
     return phr
@@ -62,20 +62,20 @@ def sent_if():
     return sent
 
 def rand_sent():
-    a = random.choice([1,2,3,4,5])
-    if a == 1:
+    x=random.choice([1,2,3,4,5])
+    if x==1:
         return sent_pos()
-    if a == 2:
+    if x==2:
         return sent_neg()
-    if a == 3:
+    if x==3:
         return sent_quest()
-    if a == 4:
+    if x==4:
         return sent_imper()
-    if a == 5:
+    if x==5:
         return sent_if()
 
 for i in range(5):
-    sent = rand_sent()
-    sent = sent.capitalize()
-    sent = sent.replace('\n','')
+    sent=rand_sent()
+    sent=sent.capitalize()
+    sent=sent.replace('\n','')
     print(sent,end=' ')
